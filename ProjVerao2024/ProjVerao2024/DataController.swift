@@ -15,10 +15,31 @@ import CoreData
  
  try catch é um mecanismo que permite  'tentar fazer algo' com possibilidade de
  tratamos este erro sem que o aplicativo pare
+ 
+ 
+ A Data Controller tem o objetivo de ser uma classe controladora: que centraliza as funções de CRUD no nosso aplicativo
 
  */
 
-class DataController {
+class DataController : ObservableObject {
+    
+    /*
+     NSPersistentContainer ajuda a gerenciar os objetos que serão
+     salvos no Core Data.
+     **/
+    let container = NSPersistentContainer(name: "FoodModel")
+    
+    init(){
+        /**
+            Quando inicializa-se o container (NSPersistentContainer), é necessário carregar os objetos do Core Data para  poder ser manipulados
+         */
+        container.loadPersistentStores{ description, error in
+            if let error = error{
+                print("Erro ao carregar os dados \(error)")
+            }
+            
+        }
+    }
 
     func save(context: NSManagedObjectContext){
         do{
@@ -26,7 +47,7 @@ class DataController {
             try context.save()
         }
         catch {
-            let error = error as NSError
+            //let error = error as NSError
             print("Erro ao salvar os dados no contexto \(error)")
         }
     }
@@ -43,13 +64,18 @@ class DataController {
         food.id = UUID()
         food.date = Date()
         
-        // TODO: Criar função salvar o dados no context
         save(context: context)
     }
     
 
-    func editFood(){
+    func editFood(foodOld: Food, name: String, calories: Double, context: NSManagedObjectContext){
         
+        foodOld.name = name
+        foodOld.calories = calories
+        foodOld.date = Date()
+        
+        save(context: context)
+    
     }
     
 }
