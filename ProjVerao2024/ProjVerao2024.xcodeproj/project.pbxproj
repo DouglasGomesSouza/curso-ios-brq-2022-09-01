@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		C7A6A56528D5048F00885085 /* AddFoodView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7A6A56428D5048F00885085 /* AddFoodView.swift */; };
+		C7B69C0F28D8E50000D83FE7 /* EditFoodView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7B69C0E28D8E50000D83FE7 /* EditFoodView.swift */; };
 		C7E70B4428D3B72300924EEA /* ProjVerao2024App.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7E70B4328D3B72300924EEA /* ProjVerao2024App.swift */; };
 		C7E70B4628D3B72300924EEA /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7E70B4528D3B72300924EEA /* ContentView.swift */; };
 		C7E70B4828D3B72300924EEA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C7E70B4728D3B72300924EEA /* Assets.xcassets */; };
@@ -18,6 +19,7 @@
 
 /* Begin PBXFileReference section */
 		C7A6A56428D5048F00885085 /* AddFoodView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddFoodView.swift; sourceTree = "<group>"; };
+		C7B69C0E28D8E50000D83FE7 /* EditFoodView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditFoodView.swift; sourceTree = "<group>"; };
 		C7E70B4028D3B72300924EEA /* ProjVerao2024.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ProjVerao2024.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C7E70B4328D3B72300924EEA /* ProjVerao2024App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjVerao2024App.swift; sourceTree = "<group>"; };
 		C7E70B4528D3B72300924EEA /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -63,6 +65,7 @@
 				C7E70B4728D3B72300924EEA /* Assets.xcassets */,
 				C7E70B4928D3B72300924EEA /* Preview Content */,
 				C7A6A56428D5048F00885085 /* AddFoodView.swift */,
+				C7B69C0E28D8E50000D83FE7 /* EditFoodView.swift */,
 			);
 			path = ProjVerao2024;
 			sourceTree = "<group>";
@@ -156,6 +159,7 @@
 			files = (
 				C7A6A56528D5048F00885085 /* AddFoodView.swift in Sources */,
 				C7E70B4628D3B72300924EEA /* ContentView.swift in Sources */,
+				C7B69C0F28D8E50000D83FE7 /* EditFoodView.swift in Sources */,
 				C7E70B5628D3BD0100924EEA /* DataController.swift in Sources */,
 				C7E70B4428D3B72300924EEA /* ProjVerao2024App.swift in Sources */,
 				C7E70B5328D3B85900924EEA /* FoodModel.xcdatamodeld in Sources */,

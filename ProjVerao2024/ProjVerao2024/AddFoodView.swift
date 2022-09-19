@@ -6,6 +6,9 @@ struct AddFoodView: View {
     
     @State var name : String = ""
     @State var calories : Double = 0.0
+    @Binding var isAddView : Bool
+    
+    //@Environment(\.dismiss) var dismiss
     
     var body: some View {
         
@@ -21,6 +24,9 @@ struct AddFoodView: View {
                 HStack{
                     Button("Submit"){
                         DataController().addFood(name: self.name, calories: self.calories, context: managedObjectContext )
+                        
+                        isAddView = false
+                        //dismiss()
                     }
                 }
             }
@@ -28,8 +34,8 @@ struct AddFoodView: View {
     }
 }
 
-struct AddFoodView_Previews: PreviewProvider {
-    static var previews: some View {
-        AddFoodView()
-    }
-}
+//struct AddFoodView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        AddFoodView()
+//    }
+//}
