@@ -11,7 +11,7 @@ struct SucessView: View {
     
     @Binding var isShowSucess : Bool
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        Text("Cadastro efetuado com sucesso!!")
         
         Button("Fechar", role: .cancel){
                     
