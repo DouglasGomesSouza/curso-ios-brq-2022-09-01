@@ -11,8 +11,16 @@ import CoreData
 struct ContentView: View {
     
     @Environment (\.managedObjectContext) var managedObjectContext
-    @FetchRequest (sortDescriptors: [SortDescriptor(\.name, order: .reverse)]) var user : FetchedResults<User>
-    @State var isAddView : Bool
+    
+    @FetchRequest (sortDescriptors: [SortDescriptor(\.name)]) var user : FetchedResults<User>
+    
+    @State var isAddView : Bool = false
+    
+    @State var userName : String = ""
+    @State var userLastname : String = ""
+    @State var userEmail : String = ""
+    @State var userPassword : String = ""
+    var userDate : Date = Date()
     
     var body: some View {
         
@@ -26,14 +34,26 @@ struct ContentView: View {
                             
                             HStack{
                                 
-                                Text("Usuarios")
-                            }//HStack
+                                VStack(alignment: .leading, spacing: 8){
+                                    Text(userElement.name ?? "")
+                                        .bold()
+                                    
+                                    Text(userElement.email ?? "") .foregroundColor(.gray)
+                                    
+                                    
+                                } //Vtack
+                                
+                                Spacer()
+                                
+                                Text( calcDate(date: userDate) )
+                                
+                            } //HStack
                             
-                        }//navigationlink
-                    }//foreach
+                        } //navigationlink
+                    } //foreach
+                    .onDelete(perform: deleteUser)
                 }//list
                 .navigationTitle( "Usuarios Cadastrados" )
-                
                 
                 .toolbar{
                     ToolbarItem(placement: .navigationBarTrailing){
@@ -44,13 +64,26 @@ struct ContentView: View {
                         }
                     }
                 } //toolbar
+                .sheet(isPresented: $isAddView){
+                    AddUserView(isAddView: $isAddView)
+                }
+                
             }//VStack
         }//navigationView
     }
+func deleteUser(offset:IndexSet) {
+           DataController().deleteUser(offsets: offset, context: managedObjectContext, user: user)
+       }
 }
+
+func calcDate (date :Date) -> String {
+            
+        return date.formatted()
+}
+
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView(isAddView: true)
+        ContentView()
     }
 }

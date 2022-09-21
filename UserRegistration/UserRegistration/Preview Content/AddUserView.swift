@@ -17,33 +17,30 @@ struct AddUserView: View {
     @State var password : String = ""
     
     @Binding var isAddView : Bool
-    @State var isShowSucess : Bool = false
     
     
     var body: some View {
         
         Form{
             Section{
-                TextField("Username", text : $name)
-                
+                    
                 VStack{
+                    TextField("Username", text : $name)
+                        .padding()
                     TextField("Lastname", text : $lastname)
-                    VStack{
-                        TextField("Email", text : $email)
-                    } .padding()
-                    VStack{
-                        TextField("Password", text : $password)
-                    } .padding()
-                } //VStack
+                        .padding()
+                    TextField("Email", text : $email)
+                        .padding()
+                    SecureField("Password", text : $password)
+                        .padding()
+                }
+                
                 HStack{
                     Button("OK"){
                         DataController().addUser(name: self.name, lastname: self.lastname, email: self.email, password: self.password, context: managedObjectContext)
                         
-                        isShowSucess = true
+                        isAddView = false
                     }
-                            .sheet(isPresented: $isShowSucess, content :{
-                                SucessView(isShowSucess: $isShowSucess)
-                            })
                 }
             }
         }

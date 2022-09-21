@@ -5,12 +5,12 @@
 //  Created by user221889 on 9/19/22.
 //
 import Foundation
-import SwiftUI
 import CoreData
+import SwiftUI
 
 class DataController : ObservableObject {
     
-    let container = NSPersistentContainer(name: "UserModel")
+    let container = NSPersistentContainer(name: "User")
     init(){
         
         container.loadPersistentStores { description, error in
@@ -38,6 +38,7 @@ class DataController : ObservableObject {
         user.lastname = lastname
         user.email = email
         user.password = password
+        user.id = UUID()
         user.date = Date()
         
         save(context: context)
