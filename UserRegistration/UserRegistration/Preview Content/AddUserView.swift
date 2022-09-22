@@ -17,7 +17,7 @@ struct AddUserView: View {
     @State var password : String = ""
     
     @Binding var isAddView : Bool
-    
+    @State var isShowSucess : Bool = false
     
     var body: some View {
         
@@ -36,15 +36,24 @@ struct AddUserView: View {
                 }
                 
                 HStack{
-                    Button("OK"){
+                    Button("Cadastrar"){
                         DataController().addUser(name: self.name, lastname: self.lastname, email: self.email, password: self.password, context: managedObjectContext)
-                        
-                        isAddView = false
+                        isShowSucess = true
+                       // isAddView = false
                     }
-                }
-            }
-        }
-    }
+                    .alert("Cadastro efetuado com sucesso" , isPresented: $isShowSucess, actions: {
+                        Button("OK", role: .cancel){
+                            
+                            isShowSucess = false
+            
+                        } //button
+                        
+                    }) //alert
+                    
+                } //HStack
+            } //section
+        } //form
+    } //body
 }
             
             //struct AddUserView_Previews: PreviewProvider {

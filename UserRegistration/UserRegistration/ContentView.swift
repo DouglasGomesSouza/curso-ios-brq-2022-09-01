@@ -15,6 +15,7 @@ struct ContentView: View {
     @FetchRequest (sortDescriptors: [SortDescriptor(\.name)]) var user : FetchedResults<User>
     
     @State var isAddView : Bool = false
+
     
     @State var userName : String = ""
     @State var userLastname : String = ""
@@ -64,9 +65,9 @@ struct ContentView: View {
                         }
                     }
                 } //toolbar
-                .sheet(isPresented: $isAddView){
+                .sheet(isPresented: $isAddView, content: {
                     AddUserView(isAddView: $isAddView)
-                }
+                })
                 
             }//VStack
         }//navigationView

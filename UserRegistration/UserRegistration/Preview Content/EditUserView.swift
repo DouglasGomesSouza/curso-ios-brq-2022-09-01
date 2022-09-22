@@ -24,8 +24,9 @@ struct EditUserView: View {
     var body: some View {
         Form{
             Section{
-                TextField("Username", text : $name)
                 
+                TextField("Username", text : $name)
+                    .padding()
                 VStack{
                     TextField("Lastname", text : $lastname)
                     VStack{
@@ -37,11 +38,20 @@ struct EditUserView: View {
                 }
                 .onAppear(){
                     
-                    self.name = name
-                    self.lastname = lastname
-                    self.email = email
-                    self.password = password
-                }
+                    if let name = user.name{
+                        self.name = name
+                    }
+                    if let lastname = user.lastname{
+                        self.lastname = lastname
+                    }
+                    if let email = user.email{
+                        self.email = email
+                    }
+                    if let password = user.password{
+                        self.password = password
+                    }
+                } //onappear
+                
                 HStack{
                     Button("Edit"){
                         DataController().editUser(userOld: user, name: self.name, lastname: self.lastname, email: self.email, password: self.password, context: managedObjectContext )
