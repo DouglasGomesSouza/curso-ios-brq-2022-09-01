@@ -10,6 +10,7 @@ import SwiftUI
 struct AddUserView: View {
     
     @Environment(\.managedObjectContext) var managedObjectContext
+    @Environment(\.dismiss) var dismiss
     
     @State var name : String = ""
     @State var lastname : String = ""
@@ -36,16 +37,18 @@ struct AddUserView: View {
                 }
                 
                 HStack{
-                    Button("Cadastrar"){
+                    Button(){
                         DataController().addUser(name: self.name, lastname: self.lastname, email: self.email, password: self.password, context: managedObjectContext)
                         isShowSucess = true
-                       // isAddView = false
-                    }
+                        // isAddView = false
+                    } label:
+                        { Label ("Cadastrar", systemImage: "person")
+                        }
                     .alert("Cadastro efetuado com sucesso" , isPresented: $isShowSucess, actions: {
                         Button("OK", role: .cancel){
                             
                             isShowSucess = false
-            
+                            dismiss()
                         } //button
                         
                     }) //alert

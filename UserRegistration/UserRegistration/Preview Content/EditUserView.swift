@@ -53,12 +53,14 @@ struct EditUserView: View {
                 } //onappear
                 
                 HStack{
-                    Button("Edit"){
+                    Button(){
                         DataController().editUser(userOld: user, name: self.name, lastname: self.lastname, email: self.email, password: self.password, context: managedObjectContext )
 
                         dismiss()
-                    }
-                }
+                    } label: {
+                        Label("Edit", systemImage: "pencil")
+                        }
+                } //HStack
             } //section
         } //form
     }

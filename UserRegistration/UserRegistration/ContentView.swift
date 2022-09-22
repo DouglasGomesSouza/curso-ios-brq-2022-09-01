@@ -44,12 +44,11 @@ struct ContentView: View {
                                     
                                 } //Vtack
                                 
-                                Spacer()
+                            Spacer()
                                 
-                                Text( calcDate(date: userDate) )
+                            Text( calcDate(date: userDate) )
                                 
                             } //HStack
-                            
                         } //navigationlink
                     } //foreach
                     .onDelete(perform: deleteUser)
@@ -62,7 +61,7 @@ struct ContentView: View {
                             isAddView = true
                         } label: {
                             Label("Add Label", systemImage: "plus.circle")
-                        }
+                            }
                     }
                 } //toolbar
                 .sheet(isPresented: $isAddView, content: {
@@ -71,10 +70,10 @@ struct ContentView: View {
                 
             }//VStack
         }//navigationView
-    }
-func deleteUser(offset:IndexSet) {
+    } //body
+        func deleteUser(offset:IndexSet) {
            DataController().deleteUser(offsets: offset, context: managedObjectContext, user: user)
-       }
+        }
 }
 
 func calcDate (date :Date) -> String {

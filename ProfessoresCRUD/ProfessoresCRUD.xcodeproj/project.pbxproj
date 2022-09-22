@@ -13,6 +13,8 @@
 		C744F45228DB830700F3B8DB /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C744F45128DB830700F3B8DB /* Preview Assets.xcassets */; };
 		C744F45A28DB85A500F3B8DB /* ProfessorModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C744F45928DB85A500F3B8DB /* ProfessorModel.swift */; };
 		C744F45C28DB86B200F3B8DB /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C744F45B28DB86B200F3B8DB /* ViewModel.swift */; };
+		C7AE69C628DCF0D900B61EA8 /* AddProfView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7AE69C528DCF0D900B61EA8 /* AddProfView.swift */; };
+		C7AE69C828DCF75F00B61EA8 /* EditProfView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7AE69C728DCF75F00B61EA8 /* EditProfView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,6 +25,8 @@
 		C744F45128DB830700F3B8DB /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		C744F45928DB85A500F3B8DB /* ProfessorModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfessorModel.swift; sourceTree = "<group>"; };
 		C744F45B28DB86B200F3B8DB /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
+		C7AE69C528DCF0D900B61EA8 /* AddProfView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddProfView.swift; sourceTree = "<group>"; };
+		C7AE69C728DCF75F00B61EA8 /* EditProfView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -39,6 +43,8 @@
 		C744F43E28DB830700F3B8DB = {
 			isa = PBXGroup;
 			children = (
+				C7AE69C728DCF75F00B61EA8 /* EditProfView.swift */,
+				C7AE69C528DCF0D900B61EA8 /* AddProfView.swift */,
 				C744F44928DB830700F3B8DB /* ProfessoresCRUD */,
 				C744F44828DB830700F3B8DB /* Products */,
 			);
@@ -152,9 +158,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				C744F45A28DB85A500F3B8DB /* ProfessorModel.swift in Sources */,
+				C7AE69C828DCF75F00B61EA8 /* EditProfView.swift in Sources */,
 				C744F44D28DB830700F3B8DB /* ContentView.swift in Sources */,
 				C744F45C28DB86B200F3B8DB /* ViewModel.swift in Sources */,
 				C744F44B28DB830700F3B8DB /* ProfessoresCRUDApp.swift in Sources */,
+				C7AE69C628DCF0D900B61EA8 /* AddProfView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
