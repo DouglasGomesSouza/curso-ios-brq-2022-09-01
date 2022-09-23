@@ -99,7 +99,9 @@ class ViewModel : ObservableObject {
                 if let data = data{
                     let result = try JSONDecoder().decode(ProfessorModel.self, from: data)
                     
-//                    print("CREATE : \(result.id)")
+                    print("CREATE : \(result.id)")
+                    
+                    self.fetchProfessores()
                 }
             }//do
             catch {
@@ -149,6 +151,8 @@ class ViewModel : ObservableObject {
                     let result = try JSONDecoder().decode(ProfessorModel.self, from: data)
                     
                     print("UPDATE : \(result.id)")
+                    
+                    self.fetchProfessores()
                 }
             }//do
             catch {
